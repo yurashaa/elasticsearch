@@ -1,0 +1,21 @@
+{
+  "name": "elasticsearch",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "es:create-books-indices": "node ./es/create-books-indices.js"
+  },
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.5.0",
+    "cookie-parser": "~1.4.4",
+    "csv-parser": "^3.0.0",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "lodash": "^4.17.21",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "@types/csv-parse": "^1.2.2"
+  }
+}

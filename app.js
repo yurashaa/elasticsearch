@@ -5,6 +5,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const booksRouter = require('./routes/books');
+const authorsRouter = require('./routes/authors');
 
 const app = express();
 
@@ -17,5 +18,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/books', booksRouter);
+app.use('/authors', authorsRouter);
 
 module.exports = app;

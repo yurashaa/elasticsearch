@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "es:create-books-indices": "node ./es/create-books-indices.js"
+    "es:create-books-indices": "node ./es/create-books-indices.js",
+    "es:create-authors-indices": "node ./es/create-authors-indices.js",
+    "es:create-logs-indices": "node ./es/create-logs-indices.js"
   },
   "dependencies": {
     "@elastic/elasticsearch": "^8.5.0",

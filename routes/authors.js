@@ -6,10 +6,10 @@ const client = require('../es/client')
 router.get('/', async (req, res) => {
   const query = req.query;
 
-  const result = await client.search({ index: 'books', body: {
+  const result = await client.search({ index: 'authors', body: {
       query: {
         match: {
-          title: query.title
+          authorName: query.authorName
         }
       }
     }
@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
   client
     .bulk({ operations: [
         { index: { _index: 'logs' } },
-        { description: `Search for Books with: ${query.title}`, date: new Date().toDateString() },
+        { description: `Search for Authors with: ${query.authorName}`, date: new Date().toDateString() },
       ] })
     .then(res => console.log(JSON.stringify(res)))
     .catch(console.error)
